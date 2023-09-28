@@ -8,12 +8,36 @@ import Layout from "../layouts/Layout.astro";
       <h1 class="text-3xl mb-4">Sam's Website</h1>
 
       <h2 class="mb-2">Colors</h2>
-      <div class="flex flex-wrap border border-slate-600">
+      <div class="flex flex-wrap border border-slate-600 mb-8">
         <div class="bg-green h-10 flex-grow"></div>
         <div class="bg-yellow h-10 flex-grow"></div>
         <div class="bg-pink h-10 flex-grow"></div>
         <div class="bg-red h-10 flex-grow"></div>
       </div>
+	  <!-- ABOUT -->
+	  <div class="flex">
+		<div class="profile w-[250px] h-[250px] flex-shrink-0">
+			<img class="w-full h-full object-cover mask" src="./public/sam.jpg" alt="Sam MacIntyre headshot">
+		</div>
+		<div class="px-4 text-slate-500">
+			<p class="mb-3">Hello, I'm Sam</p>
+			<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus ipsam iure ullam unde praesentium nam iusto, reiciendis dolore dolor sint.</p>
+		</div>
+	  </div>
     </div>
+	<svg id="mask-svg" data-image-mask-id="mask-svg" width="0" height="0" style="position: absolute;">
+		<defs>
+		  <clipPath id="mask" clipPathUnits="objectBoundingBox">
+			  <path d="M1,0.802 a0.302,0.201,0,0,0,-0.1,-0.15 a0.303,0.201,0,0,0,0,-0.299 A0.303,0.201,0,0,0,0.702,0.003 h-0.394 a0.303,0.201,0,0,0,-0.203,0.351 a0.303,0.201,0,0,0,0,0.299 a0.303,0.201,0,0,0,0.203,0.35 h0.394 a0.303,0.201,0,0,0,0.303,-0.201"></path>
+		  </clipPath>
+		</defs>
+	  </svg>
   </main>
 </Layout>
+
+<style>
+.mask {
+  /* clip-path: polygon(50% 0%, 100% 10%, 84% 73%, 50% 100%, 0% 38%); */
+  clip-path: url("#mask")
+}
+</style>
